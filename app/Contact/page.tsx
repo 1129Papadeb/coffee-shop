@@ -1,162 +1,85 @@
-// pages/info/contact.tsx
-
-import React, { CSSProperties } from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'; // Import social media icons
 
 const ContactUs = () => {
   return (
-    <div style={styles.container}>
-      <h1 style={styles.heading}>Get in Touch</h1>
-      <p style={styles.subHeading}>
+    <div className="min-h-screen bg-cover bg-center bg-[url('/images/Background.jpg')] px-6 py-12 flex flex-col items-center justify-center mt-12">
+      
+      {/* Centered Title */}
+      <h1 className="text-4xl font-bold text-[#6b4e3d] mb-4 text-center">Get in Touch</h1>
+      <p className="text-lg text-[#8d6e5a] text-center mb-8 max-w-md">
         We’d love to hear from you! Whether you have questions or just want to say hi.
       </p>
 
-      <form style={styles.form}>
-        <div style={styles.inputContainer}>
-          <label style={styles.label} htmlFor="name">Name</label>
-          <input type="text" id="name" style={styles.input} placeholder="Your name" />
-        </div>
-        <div style={styles.inputContainer}>
-          <label style={styles.label} htmlFor="email">Email</label>
-          <input type="email" id="email" style={styles.input} placeholder="Your email" />
-        </div>
-        <div style={styles.inputContainer}>
-          <label style={styles.label} htmlFor="message">Message</label>
-          <textarea id="message" style={styles.textarea} placeholder="Write your message" rows={4}></textarea>
-        </div>
-        <button style={styles.button} type="submit">Send Message</button>
-      </form>
+      {/* Container for Form and Map */}
+      <div className="flex flex-col md:flex-row items-center justify-center w-full md:w-3/4 gap-8 mb-12">
+        
+        {/* Contact Form */}
+        <form className="md:w-1/2 w-full max-w-md bg-white p-8 rounded-lg shadow-md">
+          <div className="mb-6">
+            <label htmlFor="name" className="block text-[#6b4e3d] mb-2">Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#6b4e3d]" 
+              placeholder="Your name" 
+            />
+          </div>
+          <div className="mb-6">
+            <label htmlFor="email" className="block text-[#6b4e3d] mb-2">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#6b4e3d]" 
+              placeholder="Your email" 
+            />
+          </div>
+          <div className="mb-6">
+            <label htmlFor="message" className="block text-[#6b4e3d] mb-2">Message</label>
+            <textarea 
+              id="message" 
+              rows={4} 
+              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#6b4e3d]" 
+              placeholder="Write your message"
+            ></textarea>
+          </div>
+          <button 
+            type="submit" 
+            className="w-full bg-[#6b4e3d] text-white py-2 rounded hover:bg-[#5d4037] transition duration-300"
+          >
+            Send Message
+          </button>
+        </form>
 
-      {/* Social Media Links with Icons */}
-      <div style={styles.contactInfo}>
-        <h2 style={styles.contactHeading}>Follow Us</h2>
-        <p style={styles.contactText}>Stay connected with us on social media:</p>
-        <div style={styles.socialLinks}>
-          <a href="https://www.facebook.com/YourIcedCoffeeBrand" target="_blank" style={styles.socialLink}>
-            <FaFacebookF style={styles.icon} /> Facebook
+        {/* Google Map */}
+        <div className="md:w-1/2 w-full h-96 rounded-lg shadow-lg overflow-hidden">
+          <iframe
+            className="w-full h-full"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434508791!2d-122.4194155!3d37.7749295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064aa1c5c93%3A0x8b58b59e68ba223e!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sph!4v1692732812345!5m2!1sen!2sph"
+            allowFullScreen={true}
+            aria-hidden="false"
+            tabIndex={0}
+          />
+        </div>
+      </div>
+
+      {/* Centered Social Media Links */}
+      <div className="text-center">
+        <h2 className="text-2xl font-bold text-[#6b4e3d] mb-2">Follow Us</h2>
+        <p className="text-[#8d6e5a] mb-4">Stay connected with us on social media:</p>
+        <div className="flex justify-center gap-6">
+          <a href="https://www.facebook.com/YourIcedCoffeeBrand" target="_blank" className="text-[#6b4e3d] hover:text-gray-700 flex items-center">
+            <FaFacebookF className="mr-2" /> Facebook
           </a>
-          <a href="https://www.instagram.com/YourIcedCoffeeBrand" target="_blank" style={styles.socialLink}>
-            <FaInstagram style={styles.icon} /> Instagram
+          <a href="https://www.instagram.com/YourIcedCoffeeBrand" target="_blank" className="text-[#6b4e3d] hover:text-gray-700 flex items-center">
+            <FaInstagram className="mr-2" /> Instagram
           </a>
-          <a href="https://twitter.com/YourIcedCoffeeBrand" target="_blank" style={styles.socialLink}>
-            <FaTwitter style={styles.icon} /> Twitter
+          <a href="https://twitter.com/YourIcedCoffeeBrand" target="_blank" className="text-[#6b4e3d] hover:text-gray-700 flex items-center">
+            <FaTwitter className="mr-2" /> Twitter
           </a>
         </div>
       </div>
     </div>
   );
-};
-
-const styles: { [key: string]: CSSProperties } = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    minHeight: '100vh',
-    padding: '2rem',
-    backgroundColor: '#f5e9e2', // Light brown background color
-  },
-  heading: {
-    fontSize: '2.5rem',
-    fontWeight: 'bold',
-    color: '#4a4a4a',
-    marginBottom: '1rem',
-  },
-  subHeading: {
-    fontSize: '1.2rem',
-    color: '#717171',
-    textAlign: 'center',
-    marginBottom: '2rem',
-    maxWidth: '500px',
-  },
-  form: {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '100%',
-    maxWidth: '500px',
-    backgroundColor: '#ffffff',
-    padding: '2rem',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-  },
-  inputContainer: {
-    marginBottom: '1.5rem',
-  },
-  label: {
-    display: 'block',
-    marginBottom: '0.5rem',
-    fontSize: '1rem',
-    color: '#333',
-  },
-  input: {
-    width: '100%',
-    padding: '0.75rem',
-    fontSize: '1rem',
-    borderRadius: '5px',
-    border: '1px solid #ccc',
-    backgroundColor: '#fafafa',
-    color: '#333',
-    outline: 'none',
-    boxSizing: 'border-box',
-    transition: 'border-color 0.3s ease',
-  },
-  textarea: {
-    width: '100%',
-    padding: '0.75rem',
-    fontSize: '1rem',
-    borderRadius: '5px',
-    border: '1px solid #ccc',
-    backgroundColor: '#fafafa',
-    color: '#333',
-    outline: 'none',
-    boxSizing: 'border-box',
-    transition: 'border-color 0.3s ease',
-  },
-  button: {
-    padding: '0.75rem 2rem',
-    fontSize: '1rem',
-    backgroundColor: '#45260f',
-    color: '#fff',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    transition: 'background-color 0.3s ease',
-  },
-  buttonHover: {
-    backgroundColor: '#5d4037',
-  },
-  contactInfo: {
-    marginTop: '3rem',
-    textAlign: 'center',
-  },
-  contactHeading: {
-    fontSize: '1.5rem',
-    fontWeight: 'bold',
-    color: '#4a4a4a',
-    marginBottom: '0.5rem',
-  },
-  contactText: {
-    fontSize: '1rem',
-    color: '#717171',
-    marginBottom: '1rem',
-  },
-  socialLinks: {
-    display: 'flex',
-    justifyContent: 'center',
-    gap: '2rem',
-  },
-  socialLink: {
-    display: 'flex',
-    alignItems: 'center',
-    fontSize: '1.1rem',
-    color: '#45260f',
-    textDecoration: 'none',
-    transition: 'color 0.3s ease',
-  },
-  icon: {
-    marginRight: '0.5rem',
-  },
 };
 
 export default ContactUs;
