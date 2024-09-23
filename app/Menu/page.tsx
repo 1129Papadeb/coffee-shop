@@ -82,8 +82,8 @@ function Menu() {
 
   // Render menu items
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#f5e9e2] to-[#d1c4b7] mt-14">
-
+    <div className="min-h-screen flex flex-col bg-[url('/images/Background.jpg')] from-[#f5e9e2] to-[#d1c4b7] mt-14 ">
+      
       <main className="flex-1 flex flex-col items-center justify-center p-8">
         {/* Header Section */}
         <div className="text-center mb-10">
