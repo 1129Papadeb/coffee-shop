@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import { CSSProperties, FC } from 'react';
 
 const containerStyle: CSSProperties = {
@@ -80,7 +81,8 @@ const aboutUsParagraphStyle: CSSProperties = {
 
 const About: FC = () => {
   return (
-    <div style={containerStyle}>
+    <div>
+      <div style={containerStyle}>
       <div style={topImageStyle}>
         <img
           src="images/Coffee Beans.jpg" // Add your full-width image URL here
@@ -127,6 +129,8 @@ const About: FC = () => {
           />
         </div>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

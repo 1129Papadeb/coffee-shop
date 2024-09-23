@@ -1,8 +1,10 @@
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'; // Import social media icons
+import Footer from '@/components/Footer';
+import { FaFacebookF, FaInstagram, FaPhoneAlt, FaTwitter } from 'react-icons/fa'; // Added phone icon
 
 const ContactUs = () => {
   return (
-    <div className="min-h-screen bg-cover bg-center bg-[url('/images/Background.jpg')] px-6 py-12 flex flex-col items-center justify-center mt-12">
+    <div className='pb-8'>
+        <div className="min-h-screen bg-cover bg-center bg-[url('/images/Background.jpg')] px-6 py-12 flex flex-col items-center justify-center mt-12">
       
       {/* Centered Title */}
       <h1 className="text-4xl font-bold text-[#6b4e3d] mb-4 text-center">Get in Touch</h1>
@@ -77,7 +79,19 @@ const ContactUs = () => {
             <FaTwitter className="mr-2" /> Twitter
           </a>
         </div>
+
+        {/* Phone Number */}
+        <div className="mt-8">
+          <p className="text-lg text-[#8d6e5a] mb-2">Or give us a call at:</p>
+          <div className="flex justify-center items-center text-[#6b4e3d]">
+            <FaPhoneAlt className="mr-2" />
+            <span className="font-semibold">+63 (123) 456-7890</span>
+          </div>
+        </div>
       </div>
+
+    </div>
+    <Footer/>
     </div>
   );
 };
