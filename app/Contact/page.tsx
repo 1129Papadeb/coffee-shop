@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaPhoneAlt, FaTwitter } from 'react-icons/fa'
 
 const ContactUs = () => {
   return (
-    <div className='pb-8'>
+    <div>
         <div className="min-h-screen bg-cover bg-center bg-[url('/images/Background.jpg')] px-6 py-12 flex flex-col items-center justify-center mt-12">
       
       {/* Centered Title */}
@@ -54,14 +54,14 @@ const ContactUs = () => {
 
         {/* Google Map */}
         <div className="md:w-1/2 w-full h-96 rounded-lg shadow-lg overflow-hidden">
-          <iframe
-            className="w-full h-full"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434508791!2d-122.4194155!3d37.7749295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064aa1c5c93%3A0x8b58b59e68ba223e!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sph!4v1692732812345!5m2!1sen!2sph"
-            allowFullScreen={true}
-            aria-hidden="false"
-            tabIndex={0}
-          />
-        </div>
+            <iframe
+                className="w-full h-full"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.936441702573!2d122.57560020000002!3d10.719047200000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2f02b87ba2e2849f:0x3938f59c399b8832!2sIloilo%2C%20Philippines!5e0!3m2!1sen!2sph!4v1663923323318!5m2!1sen!2sph"
+                allowFullScreen={true}
+                aria-hidden="false"
+                tabIndex={0}
+            />
+            </div>
       </div>
 
       {/* Centered Social Media Links */}
@@ -85,11 +85,10 @@ const ContactUs = () => {
           <p className="text-lg text-[#8d6e5a] mb-2">Or give us a call at:</p>
           <div className="flex justify-center items-center text-[#6b4e3d]">
             <FaPhoneAlt className="mr-2" />
-            <span className="font-semibold">+63 (123) 456-7890</span>
+            <span className="font-semibold">+1 (123) 456-7890</span>
           </div>
         </div>
       </div>
-
     </div>
     <Footer/>
     </div>
