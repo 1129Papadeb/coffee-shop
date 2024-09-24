@@ -19,7 +19,7 @@ const About = () => {
         <div className="absolute top-1/2 left-8 transform -translate-y-1/2">
           <h1 className="text-6xl font-extrabold">
             <span className="text-white">Damuhal's </span>
-            <span className="text-yellow-400">Cafe</span>
+            <span className="text-yellow-400">Café</span>
           </h1>
         </div>
       </div>
@@ -28,7 +28,7 @@ const About = () => {
       <section className="text-center py-12">
         <h1 className="text-4xl font-extrabold text-[#6b4e3d] mb-4">About Us</h1>
         <p className="text-lg max-w-3xl mx-auto mb-4 text-gray-700 px-4">
-          Welcome to &apos;Damuhal&apos;s Cafe&apos;. Located in the heart of Iloilo City, we are a specialty coffee shop dedicated to showcasing the rich and diverse coffee flavors the Philippines has to offer.
+          Welcome to &apos;Damuhal&apos;s Café&apos;. Located in the heart of Iloilo City, we are a specialty coffee shop dedicated to showcasing the rich and diverse coffee flavors the Philippines has to offer.
         </p>
         <p className="text-lg max-w-3xl mx-auto text-gray-700 px-4">
           Join us on a journey of taste and discovery as we explore the vibrant coffee culture of the Philippines. From classic blends to single-origin beans, our menu offers something for every palate.
@@ -70,7 +70,7 @@ const About = () => {
         <div className="w-full md:w-1/2 text-left px-4">
           <h2 className="text-3xl font-bold text-[#6b4e3d] mb-4">Brewing a Better Future</h2>
           <p className="text-lg text-gray-700 mb-4">
-            Here at Brewed Bliss, we are dedicated to supporting the coffee farmers of the Philippines. Our partnerships foster fair trade and promote the rich flavors of Filipino coffee.
+            Here at Damuhal&apos;s Café, we are dedicated to supporting the coffee farmers of the Philippines. Our partnerships foster fair trade and promote the rich flavors of Filipino coffee.
           </p>
         </div>
       </section>
@@ -80,11 +80,11 @@ const About = () => {
         <h2 className="text-center text-3xl font-bold text-[#6b4e3d] mb-8">The Team Behind it All</h2>
         <div className="flex flex-wrap justify-center">
           {[
-            { name: 'Regino Balogo Jr.', image: '/images/Reg.jpg' },
-            { name: 'Lemmuel Dave Dañosos', image: '/images/Deyb.jpg' },
-            { name: 'Rhazel Jay Gumacal', image: '/images/Rhaz.jpg' },
-            { name: 'Christian Angelo Panique', image: '/images/Tian.jpg' },
-            { name: 'Ethan Gabriel Soncio', image: '/images/Itan.jpg' },
+            { name: 'Regino Balogo Jr.', image: '/images/Reg.jpg', role: 'Front-end Developer' },
+            { name: 'Lemmuel Dave Dañosos', image: '/images/Deyb.jpg', role: 'Front-end Developer' },
+            { name: 'Rhazel Jay Gumacal', image: '/images/Rhaz.jpg', role: 'Leader / Front-end Developer' },
+            { name: 'Christian Angelo Panique', image: '/images/Tian.jpg', role: 'Front-end Developer' },
+            { name: 'Ethan Gabriel Soncio', image: '/images/Ethan.JPG', role: 'Front-end Developer' },
           ].map((member) => (
             <div key={member.name} className="text-center p-4">
               <div className="overflow-hidden rounded-full w-48 h-48 mx-auto shadow-lg">
@@ -97,6 +97,7 @@ const About = () => {
                 />
               </div>
               <p className="mt-4 text-lg font-semibold text-[#6b4e3d]">{member.name}</p>
+              <p className="text-sm font-semibold text-gray-600">{member.role}</p>
             </div>
           ))}
         </div>
