@@ -80,10 +80,10 @@ const About = () => {
         <h2 className="text-center text-3xl font-bold text-[#6b4e3d] mb-8">The Team Behind it All</h2>
         <div className="flex flex-wrap justify-center">
           {[
-            { name: 'Regino Balogo Jr.', image: '/images/Reg.jpg', role: 'Front-end Developer' },
-            { name: 'Lemmuel Dave Dañosos', image: '/images/Deyb.jpg', role: 'Front-end Developer' },
-            { name: 'Rhazel Jay Gumacal', image: '/images/Rhaz.jpg', role: 'Leader / Front-end Developer' },
-            { name: 'Christian Angelo Panique', image: '/images/Tian.jpg', role: 'Front-end Developer' },
+            { name: 'Regino Balogo Jr.', image: '/images/Reg.JPG', role: 'Front-end Developer' },
+            { name: 'Lemmuel Dave Dañosos', image: '/images/Deyb.JPG', role: 'Front-end Developer' },
+            { name: 'Rhazel Jay Gumacal', image: '/images/Rhaz.JPG', role: 'Leader / Front-end Developer' },
+            { name: 'Christian Angelo Panique', image: '/images/Tian.JPG', role: 'Front-end Developer' },
             { name: 'Ethan Gabriel Soncio', image: '/images/Ethan.JPG', role: 'Front-end Developer' },
           ].map((member) => (
             <div key={member.name} className="text-center p-4">
