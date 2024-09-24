@@ -133,7 +133,7 @@ function Menu() {
         </div>
 
         {/* Menu Items Section */}
-        <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-10 mt-4 ${filteredItems.length < 4 ? "justify-center" : ""}`}>
+        <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-10 mt-6 ${filteredItems.length < 4 ? "justify-center" : ""}`}>
           {filteredItems.map((item, index) => (
             <div
               key={index}
@@ -157,12 +157,12 @@ function Menu() {
                     {item.name}
                   </h2>
                   <p className="text-sm text-[#8d6e5a]">{item.description}</p>
-                  <p className="text-md font-bold text-[#6b4e3d] pt-4">
+                  <p className="text-md font-bold text-[#6b4e3d]">
                     {item.price}
                   </p>
 
                   {/* Star Ratings and Rating Numbers Alignment */}
-                  <div className="flex items-center justify-center mt-2">
+                  <div className="flex items-center mt-2">
                     {getStars(item.rating)}
                     <span className="ml-2 mb-2 text-sm text-gray-600 mt-2">{item.rating.toFixed(1)}</span>
                   </div>
@@ -170,7 +170,7 @@ function Menu() {
 
                 {/* Centered Order Button */}
                 <Link href="/Cart">
-                  <button className="bg-[#8d6e5a] hover:bg-[#6b4e3d] text-white rounded-full w-40 h-10 flex items-center justify-center mx-auto transition-colors duration-300">
+                  <button className="bg-[#8d6e5a] hover:bg-[#6b4e3d] text-white mt-1 rounded-full w-40 h-10 flex items-center justify-center mx-auto transition-colors duration-300">
                     Order Now
                   </button>
                 </Link>
