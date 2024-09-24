@@ -18,7 +18,7 @@ const About = () => {
         {/* Text Overlay */}
         <div className="absolute top-1/2 left-8 transform -translate-y-1/2">
           <h1 className="text-6xl font-extrabold">
-            <span className="text-white">Damuhal's </span>
+            <span className="text-white">Damuhal&apos;s </span>
             <span className="text-yellow-400">Café</span>
           </h1>
         </div>
