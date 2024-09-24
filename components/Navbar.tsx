@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="text-2xl font-bold">
-          Damuhal's<span className="text-yellow-500"> Café</span>
+          Damuhal&apos;s<span className="text-yellow-500"> Café</span>
         </div>
 
         {/* Navigation Links */}
