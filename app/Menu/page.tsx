@@ -1,4 +1,4 @@
-"use client";
+"use client"; // user client-side rendering
 
 import { useState } from 'react'; // Import useState hook
 import Footer from '@/components/Footer';
@@ -126,7 +126,6 @@ function Menu() {
             <option value="">All Dietary Preferences</option>
             <option value="vegan">Vegan</option>
             <option value="gluten-free">Gluten-Free</option>
-            <option value="none">None</option>
           </select>
         </div>
 
