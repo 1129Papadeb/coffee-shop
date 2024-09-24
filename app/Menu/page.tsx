@@ -1,9 +1,10 @@
 "use client"; // user client-side rendering
 
-import { useState } from 'react'; // Import useState hook
 import Footer from '@/components/Footer';
 import Image from 'next/image'; // Import Image component from Next.js for optimization
-import { FaStar, FaSearch } from 'react-icons/fa'; // Add FaSearch icons
+import Link from 'next/link'; // Import Link from Next.js
+import { useState } from 'react'; // Import useState hook
+import { FaSearch, FaStar } from 'react-icons/fa'; // Add FaSearch icons
 
 function Menu() {
   // State to store search query, selected size, and dietary preference
@@ -55,8 +56,11 @@ function Menu() {
     },
   ];
 
+  // Create an array with 8 menu items by reusing the existing items
+  const displayedItems = [...menuItems, ...menuItems]; // This creates an array of 8 items
+
   // Function to filter menu items based on search query, size, and dietary preference
-  const filteredItems = menuItems.filter(item =>
+  const filteredItems = displayedItems.filter(item =>
     item.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
     (sizeFilter ? item.size === sizeFilter : true) &&
     (dietaryFilter ? item.dietary === dietaryFilter : true) // Include dietary filter
@@ -83,7 +87,6 @@ function Menu() {
   // Render menu items
   return (
     <div className="min-h-screen flex flex-col bg-[url('/images/Background.jpg')] from-[#f5e9e2] to-[#d1c4b7] mt-14 ">
-
       <main className="flex-1 flex flex-col items-center justify-center p-8">
         {/* Header Section */}
         <div className="text-center mb-10">
@@ -130,7 +133,7 @@ function Menu() {
         </div>
 
         {/* Menu Items Section */}
-        <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-10 ${filteredItems.length < 4 ? "justify-center" : ""}`}>
+        <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-10 mt-4 ${filteredItems.length < 4 ? "justify-center" : ""}`}>
           {filteredItems.map((item, index) => (
             <div
               key={index}
@@ -154,131 +157,23 @@ function Menu() {
                     {item.name}
                   </h2>
                   <p className="text-sm text-[#8d6e5a]">{item.description}</p>
-                  <p className="text-md font-bold text-[#6b4e3d]">
+                  <p className="text-md font-bold text-[#6b4e3d] pt-4">
                     {item.price}
                   </p>
 
-                  {/* Star Ratings */}
-                  <div className="flex items-center mt-2">
+                  {/* Star Ratings and Rating Numbers Alignment */}
+                  <div className="flex items-center justify-center mt-2">
                     {getStars(item.rating)}
-                    <span className="ml-2 mb-2 text-sm text-gray-600">({item.rating.toFixed(1)})</span>
+                    <span className="ml-2 mb-2 text-sm text-gray-600 mt-2">{item.rating.toFixed(1)}</span>
                   </div>
                 </div>
 
-                {/* Order Button */}
-                <button className="bg-[#8d6e5a] hover:bg-[#6b4e3d] text-white rounded-full px-6 py-2 flex items-center justify-center transition-colors duration-300">
-                  Order Now
-                </button>
-
-                {/* Review Section */}
-                <div className="text-sm text-left text-gray-600 mt-4">
-                  <p className="font-semibold">Reviews:</p>
-                  <ul>
-                    {item.reviews.slice(0, 2).map((review, idx) => (
-                      <li key={idx}>- {review}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Menu Items Section */}
-        <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-10 ${filteredItems.length < 4 ? "justify-center" : ""}`}>
-          {filteredItems.map((item, index) => (
-            <div
-              key={index}
-              className="relative bg-white rounded-xl shadow transition-all duration-300 hover:scale-105 hover:shadow-2xl flex flex-col items-center justify-between"
-              style={{ minHeight: "360px" }}
-            >
-              {/* Image */}
-              <div className="w-full h-44 relative overflow-hidden rounded-t-lg m-0">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-
-              {/* Text Content */}
-              <div className="p-4 text-center flex flex-col flex-1 justify-between">
-                <div>
-                  <h2 className="text-xl font-semibold text-[#6b4e3d]">
-                    {item.name}
-                  </h2>
-                  <p className="text-sm text-[#8d6e5a]">{item.description}</p>
-                  <p className="text-md font-bold text-[#6b4e3d]">
-                    {item.price}
-                  </p>
-
-                  {/* Star Ratings */}
-                  <div className="flex items-center mt-2">
-                    {getStars(item.rating)}
-                    <span className="ml-2 mb-2 text-sm text-gray-600">({item.rating.toFixed(1)})</span>
-                  </div>
-                </div>
-
-                {/* Order Button */}
-                <button className="bg-[#8d6e5a] hover:bg-[#6b4e3d] text-white rounded-full px-6 py-2 flex items-center justify-center transition-colors duration-300">
-                  Order Now
-                </button>
-
-                {/* Review Section */}
-                <div className="text-sm text-left text-gray-600 mt-4">
-                  <p className="font-semibold">Reviews:</p>
-                  <ul>
-                    {item.reviews.slice(0, 2).map((review, idx) => (
-                      <li key={idx}>- {review}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Menu Items Section */}
-        <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-10 ${filteredItems.length < 4 ? "justify-center" : ""}`}>
-          {filteredItems.map((item, index) => (
-            <div
-              key={index}
-              className="relative bg-white rounded-xl shadow transition-all duration-300 hover:scale-105 hover:shadow-2xl flex flex-col items-center justify-between"
-              style={{ minHeight: "360px" }}
-            >
-              {/* Image */}
-              <div className="w-full h-44 relative overflow-hidden rounded-t-lg m-0">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-
-              {/* Text Content */}
-              <div className="p-4 text-center flex flex-col flex-1 justify-between">
-                <div>
-                  <h2 className="text-xl font-semibold text-[#6b4e3d]">
-                    {item.name}
-                  </h2>
-                  <p className="text-sm text-[#8d6e5a]">{item.description}</p>
-                  <p className="text-md font-bold text-[#6b4e3d]">
-                    {item.price}
-                  </p>
-
-                  {/* Star Ratings */}
-                  <div className="flex items-center mt-2">
-                    {getStars(item.rating)}
-                    <span className="ml-2 mb-2 text-sm text-gray-600">({item.rating.toFixed(1)})</span>
-                  </div>
-                </div>
-
-                {/* Order Button */}
-                <button className="bg-[#8d6e5a] hover:bg-[#6b4e3d] text-white rounded-full px-6 py-2 flex items-center justify-center transition-colors duration-300">
-                  Order Now
-                </button>
+                {/* Centered Order Button */}
+                <Link href="/Cart">
+                  <button className="bg-[#8d6e5a] hover:bg-[#6b4e3d] text-white rounded-full w-40 h-10 flex items-center justify-center mx-auto transition-colors duration-300">
+                    Order Now
+                  </button>
+                </Link>
 
                 {/* Review Section */}
                 <div className="text-sm text-left text-gray-600 mt-4">
@@ -295,7 +190,6 @@ function Menu() {
         </div>
 
       </main>
-      {/* Footer section from components */}
       <Footer />
     </div>
   );
