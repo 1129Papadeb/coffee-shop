@@ -159,9 +159,9 @@ function Menu() {
                   </p>
 
                   {/* Star Ratings */}
-                  <div className="flex items-center mt-2">
+                  <div className="flex items-center mb-2 mt-2">
                     {getStars(item.rating)}
-                    <span className="ml-2 mb-2 text-sm text-gray-600">({item.rating.toFixed(1)})</span>
+                    <span className="ml-2 text-sm text-gray-600">({item.rating.toFixed(1)})</span>
                   </div>
                 </div>
 
@@ -214,9 +214,9 @@ function Menu() {
                   </p>
 
                   {/* Star Ratings */}
-                  <div className="flex items-center mt-2">
+                  <div className="flex items-center mb-2 mt-2">
                     {getStars(item.rating)}
-                    <span className="ml-2 mb-2 text-sm text-gray-600">({item.rating.toFixed(1)})</span>
+                    <span className="ml-2 text-sm text-gray-600">({item.rating.toFixed(1)})</span>
                   </div>
                 </div>
 
@@ -269,9 +269,9 @@ function Menu() {
                   </p>
 
                   {/* Star Ratings */}
-                  <div className="flex items-center mt-2">
+                  <div className="flex items-center mb-2 mt-2">
                     {getStars(item.rating)}
-                    <span className="ml-2 mb-2 text-sm text-gray-600">({item.rating.toFixed(1)})</span>
+                    <span className="ml-2 text-sm text-gray-600">({item.rating.toFixed(1)})</span>
                   </div>
                 </div>
 
