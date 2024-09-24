@@ -15,44 +15,44 @@ function Menu() {
   // Menu items data with size and dietary properties added
   const menuItems = [
     {
-      name: "Iced Latte",
+      name: "Caramel Iced Latte",
       description: "Chilled espresso with milk and ice.",
       price: "₱150",
       size: "medium",
       dietary: "vegan", // New dietary property
-      image: "/menu_pics/iced-espresso.jpg",
-      rating: 4.5,
+      image: "/menu_pics/nitro.jpg",
+      rating: 5.0,
       reviews: ["Refreshing and cool! Perfect for hot days.", "Good balance of coffee and milk."]
     },
     {
-      name: "Cappuccino",
-      description: "Rich espresso with steamed milk foam.",
+      name: "Cold Brew Espresso",
+      description: "Rich cold Espresso.",
       price: "₱130",
-      size: "small",
+      size: "Large",
       dietary: "gluten-free", // New dietary property
-      image: "/menu_pics/iced-macchiato.jpg",
-      rating: 4.6,
+      image: "/menu_pics/iced-espresso.jpg",
+      rating: 3.6,
       reviews: ["Perfect foam!", "Rich and creamy."]
     },
     {
-      name: "Espresso",
-      description: "Strong and bold espresso coffee shot.",
+      name: "Vanila Cold Brew",
+      description: "Light and refreshing with a hint of vanilla.",
       price: "₱110",
       size: "small",
       dietary: "gluten-free",
-      image: "/menu_pics/iced-espresso.jpg",
-      rating: 4.4,
-      reviews: ["A strong kick!", "Bold taste, love it."]
+      image: "/menu_pics/iced-mocha.jpg",
+      rating: 4.0,
+      reviews: ["Bold taste, love it. Kimmy"]
     },
     {
-      name: "Mocha",
-      description: "Espresso with chocolate and steamed milk.",
+      name: "Mocha Frappuccino",
+      description: "A rich chocolate experience with a coffee kick.",
       price: "₱170",
       size: "large",
       dietary: "none",
-      image: "/menu_pics/iced-mocha.jpg",
-      rating: 4.7,
-      reviews: ["Great blend of coffee and chocolate!", "Absolutely delicious."]
+      image: "/menu_pics/iced-macchiato.jpg",
+      rating: 4.0,
+      reviews: ["What a nice drink!."]
     },
   ];
 
