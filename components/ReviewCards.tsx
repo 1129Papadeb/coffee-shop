@@ -1,4 +1,6 @@
+import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
+import React from 'react';
 import { FaStar } from 'react-icons/fa';
 
 const reviews = [
@@ -9,13 +11,28 @@ const reviews = [
 ];
 
 export default function ReviewCards() {
+  const ref = React.createRef<HTMLDivElement>();
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <section className="py-12 bg-gradient-to-b from-[#f5e9e2] to-[#d1c4b7]">
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, y: 100 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
+      transition={{ duration: 1, ease: 'easeInOut' }}
+      className="py-12 bg-gradient-to-b from-[#f5e9e2] to-[#d1c4b7]"
+    >
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-[#6b4e3d] mb-8 text-center">Customer Reviews</h2>
         <div className="flex flex-wrap justify-center gap-6">
           {reviews.map((review, index) => (
-            <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 w-80">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: index * 0.1 }}
+              className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 w-80"
+            >
               <div className="p-4">
                 <Image
                   src={review.imageUrl}
@@ -32,10 +49,10 @@ export default function ReviewCards() {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

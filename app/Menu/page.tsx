@@ -1,6 +1,6 @@
-"use client"; // user client-side rendering
-
+'use client'
 import Footer from '@/components/Footer';
+import { motion } from 'framer-motion'; // Import motion from Framer Motion
 import Image from 'next/image'; // Import Image component from Next.js for optimization
 import Link from 'next/link'; // Import Link from Next.js
 import { useState } from 'react'; // Import useState hook
@@ -28,14 +28,14 @@ function Menu() {
       name: "Cold Brew Espresso",
       description: "Rich cold Espresso.",
       price: "₱130",
-      size: "Large",
+      size: "large",
       dietary: "gluten-free", // New dietary property
       image: "/menu_pics/iced-espresso.jpg",
       rating: 3.6,
       reviews: ["Perfect foam!", "Rich and creamy."]
     },
     {
-      name: "Vanila Cold Brew",
+      name: "Vanilla Cold Brew",
       description: "Light and refreshing with a hint of vanilla.",
       price: "₱110",
       size: "small",
@@ -84,13 +84,20 @@ function Menu() {
     );
   };
 
+  // Animation variants for Framer Motion
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.95, y: 50 }, // Initial state
+    visible: { opacity: 1, scale: 1, y: 0 },   // Final state
+    exit: { opacity: 0, scale: 0.95, y: -50 },   // Exit state
+  };
+
   // Render menu items
   return (
     <div className="min-h-screen flex flex-col bg-[url('/images/Background.jpg')] from-[#f5e9e2] to-[#d1c4b7] mt-14 ">
       <main className="flex-1 flex flex-col items-center justify-center p-8">
         {/* Header Section */}
         <div className="text-center mb-10">
-          <h1 className="text-5xl font-extrabold text-[#6b4e3d]">Our Menu</h1>
+          <h1 className="text-5xl font-extrabold text-[#6b4e3d] ">Our Menu</h1>
           <p className="text-lg text-[#8d6e5a] mt-4">Enjoy a variety of coffee brewed to perfection.</p>
         </div>
 
@@ -98,7 +105,7 @@ function Menu() {
         <div className="mb-8 flex items-center space-x-4">
           {/* Search Bar */}
           <div className="relative">
-            <FaSearch className="absolute top-2 left-2 text-gray-400" />
+            <FaSearch className="absolute mt-1 ml-1 top-2 left-2 text-gray-400" />
             <input
               type="text"
               placeholder="Search by name..."
@@ -135,10 +142,15 @@ function Menu() {
         {/* Menu Items Section */}
         <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-10 mt-6 ${filteredItems.length < 4 ? "justify-center" : ""}`}>
           {filteredItems.map((item, index) => (
-            <div
+            <motion.div
               key={index}
-              className="relative bg-white rounded-xl shadow transition-all duration-300 hover:scale-105 hover:shadow-2xl flex flex-col items-center justify-between"
+              className="relative bg-white rounded-xl shadow transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex flex-col items-center justify-between"
               style={{ minHeight: "360px" }}
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
             >
               {/* Image */}
               <div className="w-full h-44 relative overflow-hidden rounded-t-lg m-0">
@@ -170,26 +182,16 @@ function Menu() {
 
                 {/* Centered Order Button */}
                 <Link href="/Cart">
-                  <button className="bg-[#8d6e5a] hover:bg-[#6b4e3d] text-white mt-1 rounded-full w-40 h-10 flex items-center justify-center mx-auto transition-colors duration-300">
+                  <button className="bg-[#6b4e3d] text-white font-bold py-2 px-4 rounded-full hover:bg-[#8d6e5a] transition duration-300">
                     Order Now
                   </button>
                 </Link>
-
-                {/* Review Section */}
-                <div className="text-sm text-left text-gray-600 mt-4">
-                  <p className="font-semibold">Reviews:</p>
-                  <ul>
-                    {item.reviews.slice(0, 2).map((review, idx) => (
-                      <li key={idx}>- {review}</li>
-                    ))}
-                  </ul>
-                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-
       </main>
+
       <Footer />
     </div>
   );

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'; // Importing motion from Framer Motion
 import Image from 'next/image';
 import { FaStar } from 'react-icons/fa';
 
@@ -17,9 +18,13 @@ export default function ReviewGrid() {
         <h2 className="text-3xl font-bold text-[#6b4e3d] mb-8 text-center">Customer Reviews</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((review, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white shadow-lg rounded-lg p-4 flex items-center transition-transform transform hover:scale-105 hover:shadow-xl"
+              className="bg-white shadow-lg rounded-lg p-4 flex items-center hover:shadow-xl"
+              initial={{ scale: 0.9, opacity: 0 }} // Initial state for animation
+              whileInView={{ scale: 1, opacity: 1 }} // Final state when in view
+              transition={{ duration: 0.5, delay: index * 0.1 }} // Transition effect
+              viewport={{ once: true }} // Animation occurs only once
             >
               <Image
                 src={review.imageUrl}
@@ -38,7 +43,7 @@ export default function ReviewGrid() {
                   <span className="ml-2 text-sm text-gray-600">({review.rating})</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
