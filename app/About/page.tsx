@@ -12,8 +12,7 @@ const topImageStyle: CSSProperties = {
   width: '110%', // Full width of the container
   height: 'auto', // Auto height to maintain aspect ratio
   overflow: 'hidden', // Hide any overflow
-  marginTop: '3rem', // Space above the top image
-  marginLeft:'-2rem',
+  marginLeft: '-2rem',
 };
 
 const topImageElementStyle: CSSProperties = {
@@ -59,25 +58,52 @@ const textStyle: CSSProperties = {
 
 const headingStyle: CSSProperties = {
   fontStyle: 'bold',
-  fontSize: '5rem',
+  fontSize: '3rem',
   marginBottom: '1rem',
   color: '#6b4e3d',
   fontWeight: 'bold',
 };
 
 const paragraphStyle: CSSProperties = {
-  padding: '2rem',
-  fontSize: '1.4rem',
+  fontSize: '1.2rem',
   lineHeight: '1.6',
   margin: '0 0 1rem 0', // Add bottom margin
 };
+
 const aboutUsParagraphStyle: CSSProperties = {
-  fontSize: '1.2rem',
+  fontSize: '1.4rem',
   maxWidth: '900px', // Limit the width of the text block
   margin: '0 auto', // Center the text block horizontally
-  marginTop:'1rem',
+  marginTop: '1rem',
   padding: '0 1rem', // Add some padding on the sides
-}
+};
+
+const soloImageSectionStyle: CSSProperties = {
+  display: 'flex',
+  flexWrap: 'wrap', // Allow multiple rows of images
+  justifyContent: 'center',
+  padding: '1rem',
+};
+
+const soloImageContainerStyle: CSSProperties = {
+  textAlign: 'center',
+  margin: '1rem',
+  maxWidth: '200px', // Set the width of the solo image container
+};
+
+const soloImageElementStyle: CSSProperties = {
+  width: '100%',
+  height: '250px', // Set a fixed height for the solo images
+  objectFit: 'cover', // Maintain aspect ratio while covering the container
+  borderRadius: '50%', // Optional: make the image circular
+};
+
+const nameStyle: CSSProperties = {
+  fontSize: '1.2rem',
+  marginTop: '0.5rem',
+  color: '#6b4e3d',
+  fontWeight: 'bold',
+};
 
 const About: FC = () => {
   return (
@@ -92,7 +118,7 @@ const About: FC = () => {
       <div style={aboutUsSectionStyle}>
         <h1 style={headingStyle}>About Us</h1>
         <p style={aboutUsParagraphStyle}>
-          Welcome to 'Brewed Bliss', Located in the heart of Iloilo City, we are a specialty coffee shop dedicated to showcasing the rich and diverse coffee flavors the Philippines has to offer. 
+          Welcome to 'Brewed Bliss', Located in the heart of Iloilo City, we are a specialty coffee shop dedicated to showcasing the rich and diverse coffee flavors the Philippines has to offer.
         </p>
         <p style={aboutUsParagraphStyle}>
           Join us on a journey of taste and discovery as we explore the vibrant coffee culture of the Philippines. From classic blends to single-origin beans, our menu offers something for every palate.
@@ -109,23 +135,70 @@ const About: FC = () => {
         <div style={textStyle}>
           <h2 style={headingStyle}>Experience the Philippines in Every Cup</h2>
           <p style={paragraphStyle}>
-            At Brewed Bliss, We can guarantee taste of the richness of our locally sourced coffee, from the high caffeine robusta beans to the sweeter and zesty arabica beans, you are sure to taste the bliss of the Philippiens in every cup.
+            At Brewed Bliss, we can guarantee a taste of the richness of our locally sourced coffee, from the high caffeine robusta beans to the sweeter and zesty arabica beans. You are sure to taste the bliss of the Philippines in every cup.
           </p>
         </div>
       </div>
       <div style={{ ...sectionStyle, flexDirection: 'row' }}>
         <div style={textStyle}>
-          <h2 style={headingStyle}>The Team Behind it All</h2>
+          <h2 style={headingStyle}>Brewing a Better Future</h2>
           <p style={paragraphStyle}>
-            Mga gago lg kami nga asta lg sa stick nga kape. Mahal na ang iced coffee para saamon
+            Here at Brewed Bliss, we are dedicated to supporting the coffee farmers of the Philippines. The partnership between multiple small-scale coffee farmers fosters fair trade for their hard work while promoting the rich and diverse flavors of Filipino coffee.
           </p>
         </div>
         <div style={imageContainerStyle}>
           <img
-            src="menu_pics/aboutcoffee.jpg"
+            src="images/Parmer.jpg"
             alt="Description of image"
             style={imageElementStyle}
           />
+        </div>
+      </div>
+
+      {/* Solo Image Section */}
+      <div style={aboutUsSectionStyle}>
+      <h2 style={headingStyle}>The Team Behind it All</h2>
+      </div>
+      <div style={soloImageSectionStyle}>
+        <div style={soloImageContainerStyle}>
+          <img
+            src="images/Reg.jpg" // Add your solo image URL here
+            alt="Regino Balogo Jr."
+            style={soloImageElementStyle}
+          />
+          <p style={nameStyle}>Regino Balogo Jr.</p>
+        </div>
+        <div style={soloImageContainerStyle}>
+          <img
+            src="images/Deyb.jpg" // Add your solo image URL here
+            alt="Lemmuel Dave Dañosos"
+            style={soloImageElementStyle}
+          />
+          <p style={nameStyle}>Lemmuel Dave Dañosos</p>
+        </div>
+        <div style={soloImageContainerStyle}>
+          <img
+            src="images/Rhaz.jpg" // Add your solo image URL here
+            alt="Rhazel Jay Gumacal"
+            style={soloImageElementStyle}
+          />
+          <p style={nameStyle}>Rhazel Jay Gumacal</p>
+        </div>
+        <div style={soloImageContainerStyle}>
+          <img
+            src="images/Tian.jpg" // Add your solo image URL here
+            alt="Christian Angelo Panique"
+            style={soloImageElementStyle}
+          />
+          <p style={nameStyle}>Christian Angelo Panique</p>
+        </div>
+        <div style={soloImageContainerStyle}>
+          <img
+            src="images/Itan.jpg" // Add your solo image URL here
+            alt="Ethan Gabriel Soncio"
+            style={soloImageElementStyle}
+          />
+          <p style={nameStyle}>Ethan Gabriel Soncio</p>
         </div>
       </div>
     </div>
