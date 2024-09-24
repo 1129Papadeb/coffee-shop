@@ -1,3 +1,4 @@
+'use client'
 import FavoriteProducts from '@/components/FavoriteProducts';
 import FloatingOrderButton from '@/components/FloatingOrderButton';
 import Footer from '@/components/Footer';
@@ -17,7 +18,7 @@ function Home() {
           <p className="text-lg text-[#8d6e5a]">
             Indulge in the finest iced coffee made with passion. We serve the best blends, carefully brewed to perfection.
           </p>
-          <button className="bg-brown-600 hover:bg-brown-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out">
+          <button onClick={() => window.location.href = '/About'} className="bg-brown-600 hover:bg-brown-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out">
             Learn More
           </button>
         </div>
