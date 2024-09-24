@@ -24,7 +24,6 @@ export default function ReviewGrid() {
               initial={{ scale: 0.9, opacity: 0 }} // Initial state for animation
               whileInView={{ scale: 1, opacity: 1 }} // Final state when in view
               transition={{ duration: 0.5, delay: index * 0.1 }} // Transition effect
-              viewport={{ once: true }} // Animation occurs only once
             >
               <Image
                 src={review.imageUrl}
