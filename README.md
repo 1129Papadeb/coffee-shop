@@ -33,6 +33,9 @@ To get started with the project, follow these steps:
    git clone https://github.com/yourusername/damuhals-cafe.git
    cd damuhals-cafe
 2. **Install Dependencies**:
-   '''bash
+   ```bash
    npm install
-3.
+3.**Start the development server**:
+   ```bash
+   npm run dev
+## Usage
