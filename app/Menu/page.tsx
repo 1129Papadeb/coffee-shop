@@ -83,14 +83,6 @@ function Menu() {
       </>
     );
   };
-
-  // Animation variants for Framer Motion
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.9, y: 50 }, // Initial state
-    visible: { opacity: 1, scale: 1, y: 0 },   // Final state
-    exit: { opacity: 0, scale: 0.9, y: -50 },   // Exit state
-  };
-
   // Render menu items
   return (
     <div className="min-h-screen flex flex-col bg-[url('/images/Background.jpg')] from-[#f5e9e2] to-[#d1c4b7] mt-14 ">

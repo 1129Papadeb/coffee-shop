@@ -88,7 +88,7 @@ function Home() {
         >
           <h2 className="text-3xl font-bold text-[#6b4e3d] text">Damuhal&apos;s Cafe</h2>
           <p className="text-lg text-[#8d6e5a]">
-            At Damuhal&apos;s Cafe, we believe in providing not just coffee but an experience. Our beans are sourced from the best plantations and brewed to perfection, ensuring a delightful taste in every sip. Whether you're here to enjoy a cozy atmosphere or to grab a quick cup on the go, we've got you covered!
+            At Damuhal&apos;s Cafe, we believe in providing not just coffee but an experience. Our beans are sourced from the best plantations and brewed to perfection, ensuring a delightful taste in every sip. Whether you&apos;re here to enjoy a cozy atmosphere or to grab a quick cup on the go, we&apos;ve got you covered!
           </p>
         </motion.div>
       </section>

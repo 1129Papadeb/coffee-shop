@@ -157,7 +157,7 @@ const About = () => {
       </motion.section>
 
        {/* Team Section */}
-       <motion.section
+      <motion.section
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 1.2 }} // Adjust delay here
