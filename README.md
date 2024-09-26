@@ -22,7 +22,7 @@ Welcome to Damuhal's Cafe Web App! This application serves as a digital platform
 - **Next.js**: React framework for server-side rendering and static site generation.
 - **Tailwind CSS**: Utility-first CSS framework for styling.
 - **Framer Motion**: Animation library for React.
-- **Firebase**: Backend services for authentication and database management (if applicable).
+- **Clerk Auth**: For user authentication.
 - **React Icons**: Library for customizable icons.
 
 ## Installation
@@ -32,3 +32,7 @@ To get started with the project, follow these steps:
    ```bash
    git clone https://github.com/yourusername/damuhals-cafe.git
    cd damuhals-cafe
+2. **Install Dependencies**:
+   '''bash
+   npm install
+3.
