@@ -38,3 +38,4 @@ To get started with the project, follow these steps:
 3.**Start the development server**:
    ```bash
       npm run dev
+## Usage
