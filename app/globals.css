@@ -61,3 +61,20 @@ main {
   overflow-x: auto;
   white-space: nowrap;
 }
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flipped .flipper {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}

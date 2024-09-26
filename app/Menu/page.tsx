@@ -138,7 +138,6 @@ function Menu() {
           key={index}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.1, ease: 'easeInOut', delay: 0.01, stagger: 0.01 }}
           className="relative bg-white rounded-xl shadow transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex flex-col items-center justify-between"
           style={{ minHeight: "360px" }}
