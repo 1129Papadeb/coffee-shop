@@ -1,6 +1,8 @@
 # Damuhal's Cafe Web App
 
-Welcome to Damuhal's Cafe Web App! This application serves as a digital platform for our coffee shop, providing users with information about our offerings, location, and more. 
+Welcome to Damuhal's Cafe Web App! This application serves as a digital platform for our coffee shop, providing users with information about our offerings, location, and more.
+
+Website Link : http://coffee-shop-wheat-two.vercel.app/
 
 ## Table of Contents
 - [Features](#features)
@@ -41,3 +43,4 @@ To get started with the project, follow these steps:
 - Navigate through the homepage to explore our coffee offerings and learn more about Damuhal's Cafe.
 - Use the floating order button to quickly access ordering options.
 - Check out the reviews section to read what our customers say!
+
