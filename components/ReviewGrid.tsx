@@ -4,11 +4,11 @@ import Link from 'next/link';
 import { FaStar } from 'react-icons/fa';
 
 const reviews = [
-  { name: "Jane Doe", text: "Great coffee and friendly staff!", rating: 5, imageUrl: "/review/mark.jpg" },
-  { name: "John Smith", text: "Love the caramel iced latte. Will be back!", rating: 4, imageUrl: "/review/mark.jpg" },
-  { name: "Alice Johnson", text: "The best mocha I've ever had!", rating: 5, imageUrl: "/review/mark.jpg" },
-  { name: "Bob Brown", text: "Good ambiance and excellent service.", rating: 4, imageUrl: "/review/mark.jpg" },
-  { name: "Charlie Green", text: "Cozy place to relax with a book.", rating: 5, imageUrl: "/review/mark.jpg" },
+  { name: "Taylor Swift", text: "Great coffee and friendly staff!", rating: 5, imageUrl: "/review/Taylor2.jpg" },
+  { name: "Jebron Lames", text: "Love the caramel iced latte. Will be back!", rating: 4, imageUrl: "/review/Bron.jpg" },
+  { name: "Bretman Rock", text: "The best mocha I've ever had!", rating: 5, imageUrl: "/review/Rock.jpg" },
+  { name: "Joshua Disgrasya", text: "Good ambiance and excellent service.", rating: 4, imageUrl: "/review/Daniel.jpg" },
+  { name: "Jung Cook", text: "Cozy place to relax with a book.", rating: 5, imageUrl: "/review/Jung.jpg" },
   { name: "Emily White", text: "Friendly baristas and delicious pastries!", rating: 4, imageUrl: "/review/mark.jpg" },
 ];
 
