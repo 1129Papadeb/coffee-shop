@@ -19,31 +19,27 @@ function Home() {
           transition={{ duration: 1, delay: 0.1 }} // Added delay for staggered effect
           className="w-full md:w-1/2 text-left space-y-6"
         >
-          <motion.h1
-            className="text-5xl font-extrabold text-[#6b4e3d]"
-            initial={{ opacity: 0, y: -20 }} // Start with a slide down effect
-            whileInView={{ opacity: 1, y: 0 }} // Move to original position
-            transition={{ duration: 0.5, delay: 0.2 }} // Slight delay
-          >
-            Welcome to Our Coffee Shop!
-          </motion.h1>
-          <motion.p
-            className="text-lg text-[#8d6e5a]"
-            initial={{ opacity: 0, y: 20 }} // Start with a slight upward slide
-            whileInView={{ opacity: 1, y: 0 }} // Move to original position
-            transition={{ duration: 0.5, delay: 0.3 }} // Slight delay
-          >
+          <h1 className="text-5xl font-extrabold text-[#6b4e3d]">
+            {Array.from('Welcome to Our Coffee Shop!').map((letter, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: index * 0.05, duration: 0.2 }}
+              >
+                {letter}
+              </motion.span>
+            ))}
+          </h1>
+          <p className="text-lg text-[#8d6e5a]">
             Indulge in the finest iced coffee made with passion. We serve the best blends, carefully brewed to perfection.
-          </motion.p>
-          <motion.button
+          </p>
+          <button
             onClick={() => window.location.href = '/About'}
             className="bg-brown-600 hover:bg-brown-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out"
-            initial={{ opacity: 0 }} // Start invisible
-            whileInView={{ opacity: 1 }} // Fade in
-            transition={{ duration: 0.5, delay: 0.4 }} // Delay for button
           >
             Learn More
-          </motion.button>
+          </button>
         </motion.div>
 
         {/* Right Section: Image */}
@@ -64,11 +60,59 @@ function Home() {
         </motion.div>
       </main>
 
-      {/* Favorite Products Section */}
+      {/* New Section: Damuhal's Cafe */}
+      <section className="flex flex-col md:flex-row items-center justify-center p-8 bg-white shadow-lg rounded-lg mb-12 text">
+        {/* Left: Logo Image */}
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.1 }}
+          className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0"
+        >
+          <Image
+            src="/logo/logo.png" // Update with the path to your logo image
+            alt="Damuhal's Cafe Logo"
+            className="rounded-lg object-contain h-64" // Adjust height as needed
+            width={300} // Adjust width as needed
+            height={300} // Adjust height as needed
+            priority={true}
+          />
+        </motion.div>
 
+        {/* Right: Text About Damuhal's Cafe */}
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="w-full md:w-1/2 space-y-4 p-4 text-justify"
+        >
+          <h2 className="text-3xl font-bold text-[#6b4e3d] text">Damuhal&apos;s Cafe</h2>
+          <p className="text-lg text-[#8d6e5a]">
+            At Damuhal&apos;s Cafe, we believe in providing not just coffee but an experience. Our beans are sourced from the best plantations and brewed to perfection, ensuring a delightful taste in every sip. Whether you're here to enjoy a cozy atmosphere or to grab a quick cup on the go, we've got you covered!
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Favorite Products Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.6 }}
+        className="mt-12"
+      >
         <FavoriteProducts />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.7 }}
+        className="mt-12"
+      >
         <ReviewGrid />
-        <Footer />
+      </motion.div>
+
+      <Footer />
       <FloatingOrderButton />
     </div>
   );

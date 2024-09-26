@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const About = () => {
   return (
-    <div className="bg-[#f5e9e2] text-gray-800">
+    <div className="bg-[#f5e9e2] text-gray-800 text-justify">
       {/* Top Banner Section with Text Overlay */}
       <motion.div
         initial={{ opacity: 0, y: 100 }}
@@ -48,7 +48,22 @@ const About = () => {
         <motion.h1 initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }} 
-        className="text-5xl font-extrabold text-[#6b4e3d] mb-4 text-center mt-12">About Us</motion.h1>
+        className="text-5xl font-extrabold text-[#6b4e3d] mb-4 text-center mt-28">About Us</motion.h1>
+
+        {/* Logo Image */}
+        <motion.div className="flex justify-center mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}>
+          <Image
+            src="/logo/logo.png" // Path to your logo
+            alt="Damuhal's Café Logo"
+            width={250} // Adjust the width according to your design
+            height={150} // Adjust the height according to your design
+            className="object-contain" // Ensures the logo is properly contained
+          />
+        </motion.div>
+
         <motion.p
           className="text-lg max-w-3xl mx-auto mb-4 text-gray-700 px-4"
           initial={{ opacity: 0, y: 20 }}
@@ -74,7 +89,7 @@ const About = () => {
         transition={{ duration: 0.5, delay: 0.6 }} // Adjust delay here
         viewport={{ once: true }}
       >
-        <div className="flex flex-col md:flex-row items-center justify-center py-12 space-y-6 md:space-y-0 md:space-x-8">
+        <div className="flex flex-col md:flex-row items-center justify-center py-12 space-y-6 md:space-y-0 md:space-x-8 mt-8">
           <motion.div
             className="w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg"
             initial={{ opacity: 0, y: 20 }}
@@ -111,7 +126,7 @@ const About = () => {
         transition={{ duration: 0.5, delay: 0.9 }} // Adjust delay here
         viewport={{ once: true }}
       >
-        <div className="flex flex-col md:flex-row-reverse items-center justify-center py-12 space-y-6 md:space-y-0 md:space-x-8">
+        <div className="flex flex-col md:flex-row-reverse items-center justify-center py-12 space-y-6 md:space-y-0 md:space-x-8 mt-12">
           <motion.div
             className="w-full md:w-1/2 overflow-hidden rounded-lg shadow-lg"
             initial={{ opacity: 0, y: 20 }}
@@ -141,8 +156,8 @@ const About = () => {
         </div>
       </motion.section>
 
-      {/* Team Section */}
-      <motion.section
+       {/* Team Section */}
+       <motion.section
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 1.2 }} // Adjust delay here

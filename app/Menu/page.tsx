@@ -86,9 +86,9 @@ function Menu() {
 
   // Animation variants for Framer Motion
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.95, y: 50 }, // Initial state
+    hidden: { opacity: 0, scale: 0.9, y: 50 }, // Initial state
     visible: { opacity: 1, scale: 1, y: 0 },   // Final state
-    exit: { opacity: 0, scale: 0.95, y: -50 },   // Exit state
+    exit: { opacity: 0, scale: 0.9, y: -50 },   // Exit state
   };
 
   // Render menu items
@@ -142,16 +142,15 @@ function Menu() {
         {/* Menu Items Section */}
         <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6 mb-10 mt-6 ${filteredItems.length < 4 ? "justify-center" : ""}`}>
           {filteredItems.map((item, index) => (
-            <motion.div
-              key={index}
-              className="relative bg-white rounded-xl shadow transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex flex-col items-center justify-between"
-              style={{ minHeight: "360px" }}
-              variants={itemVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
-            >
+          <motion.div
+          key={index}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.1, ease: 'easeInOut', delay: 0.01, stagger: 0.01 }}
+          className="relative bg-white rounded-xl shadow transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex flex-col items-center justify-between"
+          style={{ minHeight: "360px" }}
+        >
               {/* Image */}
               <div className="w-full h-44 relative overflow-hidden rounded-t-lg m-0">
                 <Image

@@ -1,4 +1,5 @@
 import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import Image from 'next/image';
 import { FaShoppingCart } from 'react-icons/fa';
 
 export default function Navbar() {
@@ -6,8 +7,16 @@ export default function Navbar() {
     <nav className="bg-brown-800 text-white p-4 fixed top-0 w-full z-10">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <div className="text-2xl font-bold">
-          Damuhal&apos;s<span className="text-yellow-500"> Café</span>
+        <div className="flex items-center space-x-2 text-2xl font-bold">
+          <Image 
+            src="/logo/logo.png" 
+            alt="Damuhal's Café Logo" 
+            width={70} 
+            height={70} 
+            className="w-18 h-18 -mt-6 -mb-6" // Adjust the logo size here
+          />
+          <span>Damuhal&apos;s</span>
+          <span className="text-yellow-500">Café</span>
         </div>
 
         {/* Navigation Links */}
