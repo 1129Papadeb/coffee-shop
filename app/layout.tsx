@@ -7,7 +7,7 @@ import './globals.css';
 // Load fonts (make sure the paths are correct)
 
 export const metadata: Metadata = {
-  title: 'Coffee Shop Landing Page',
+  title: 'Damuhals Cafe',
   description: 'Aesthetic coffee shop landing page',
 };
 
