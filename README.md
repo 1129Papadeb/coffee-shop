@@ -7,7 +7,6 @@ Welcome to Damuhal's Cafe Web App! This application serves as a digital platform
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
 
 
 ## Features
@@ -33,9 +32,12 @@ To get started with the project, follow these steps:
    git clone https://github.com/yourusername/damuhals-cafe.git
    cd damuhals-cafe
 2. **Install Dependencies**:
-   ```bash
+    ```bash
    npm install
-3.**Start the development server**:
+3. **Start the development server**:
    ```bash
-      npm run dev
+   npm run dev
 ## Usage
+- Navigate through the homepage to explore our coffee offerings and learn more about Damuhal's Cafe.
+- Use the floating order button to quickly access ordering options.
+- Check out the reviews section to read what our customers say!
